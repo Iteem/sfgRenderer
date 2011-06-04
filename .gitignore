@@ -1,0 +1,14 @@
+*.a
+*.o
+*.os
+*.so
+*.exe
+*.dll
+*.layout
+*.depend
+
+
+/bin
+/lib
+/doc
+/obj
