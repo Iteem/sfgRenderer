@@ -34,12 +34,13 @@
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
+					<Add option="-lsfgrenderer-s" />
 					<Add option="-lsfgui" />
 					<Add option="-lsfml-audio" />
 					<Add option="-lsfml-graphics" />
 					<Add option="-lsfml-window" />
 					<Add option="-lsfml-system" />
-					<Add library="..\..\lib\libsfgRenderer-s.a" />
+					<Add directory="..\..\lib" />
 				</Linker>
 			</Target>
 		</Build>
