@@ -17,11 +17,11 @@
 					<Add option="-DSFGRENDERER_EXPORT" />
 				</Compiler>
 				<Linker>
-					<Add option="-lsfgui-d" />
-					<Add option="-lsfml-audio-d" />
-					<Add option="-lsfml-graphics-d" />
-					<Add option="-lsfml-window-d" />
-					<Add option="-lsfml-system-d" />
+					<Add option="-lsfgui" />
+					<Add option="-lsfml-audio" />
+					<Add option="-lsfml-graphics" />
+					<Add option="-lsfml-window" />
+					<Add option="-lsfml-system" />
 				</Linker>
 				<ExtraCommands>
 					<Add after='cmd /c copy &quot;$(PROJECT_DIR)lib\libsfgRenderer-d.dll.a&quot; &quot;$(PROJECT_DIR)lib\libsfgRenderer-d.a&quot;' />
@@ -62,11 +62,11 @@
 					<Add option="-DSFGRENDERER_STATIC" />
 				</Compiler>
 				<Linker>
-					<Add option="-lsfgui-d" />
-					<Add option="-lsfml-audio-d" />
-					<Add option="-lsfml-graphics-d" />
-					<Add option="-lsfml-window-d" />
-					<Add option="-lsfml-system-d" />
+					<Add option="-lsfgui" />
+					<Add option="-lsfml-audio" />
+					<Add option="-lsfml-graphics" />
+					<Add option="-lsfml-window" />
+					<Add option="-lsfml-system" />
 				</Linker>
 			</Target>
 			<Target title="Release Static">
@@ -94,7 +94,9 @@
 			<Add directory="include" />
 		</Compiler>
 		<Unit filename="include\sfgRenderer\Config.hpp" />
+		<Unit filename="include\sfgRenderer\Spritebox.hpp" />
 		<Unit filename="include\sfgRenderer\sfgRenderer.hpp" />
+		<Unit filename="src\Spritebox.cpp" />
 		<Unit filename="src\sfgRenderer.cpp" />
 		<Extensions>
 			<code_completion />

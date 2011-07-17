@@ -6,6 +6,7 @@
 *.dll
 *.layout
 *.depend
+*.cbTemp
 
 
 /bin

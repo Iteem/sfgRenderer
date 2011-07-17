@@ -15,12 +15,13 @@
 					<Add option="-g" />
 				</Compiler>
 				<Linker>
-					<Add option="-lsfgui-d" />
-					<Add option="-lsfml-audio-d" />
-					<Add option="-lsfml-graphics-d" />
-					<Add option="-lsfml-window-d" />
-					<Add option="-lsfml-system-d" />
-					<Add library="..\..\lib\libsfgRenderer-d.a" />
+					<Add option="-lsfgrenderer-d" />
+					<Add option="-lsfgui" />
+					<Add option="-lsfml-audio" />
+					<Add option="-lsfml-graphics" />
+					<Add option="-lsfml-window" />
+					<Add option="-lsfml-system" />
+					<Add directory="..\..\lib" />
 				</Linker>
 			</Target>
 			<Target title="Release">
