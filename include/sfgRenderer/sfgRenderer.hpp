@@ -16,6 +16,7 @@ class SFGRENDERER_API sfgRenderer : public sfg::Engine {
 		sf::Drawable* CreateWindowDrawable( boost::shared_ptr<sfg::Window> window ) const;
 		sf::Drawable* CreateButtonDrawable( boost::shared_ptr<sfg::Button> button ) const;
 		sf::Drawable* CreateLabelDrawable( boost::shared_ptr<sfg::Label> label ) const;
+		sf::Drawable* CreateEntryDrawable( boost::shared_ptr<sfg::Entry> entry ) const;
 
 	private:
         sf::Font m_font;

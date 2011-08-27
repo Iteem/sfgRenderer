@@ -1,5 +1,5 @@
 #include <sfgRenderer/Spritebox.hpp>
-#include <SFML/Graphics/Image.hpp>
+#include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
 
 namespace sfgr {
@@ -10,17 +10,17 @@ m_dimension(0, 0)
 {
 }
 
-void Spritebox::SetImage(const sf::Image &image, bool adjustSubRect)
+void Spritebox::SetTexture(const sf::Texture &texture, bool adjustSubRect)
 {
-	m_image = &image;
+	m_texture = &texture;
 	if(adjustSubRect){
-        m_subRect = sf::IntRect(0, 0, m_image->GetWidth(), m_image->GetHeight());
+        m_subRect = sf::IntRect(0, 0, m_texture->GetWidth(), m_texture->GetHeight());
 	}
 }
 
-const sf::Image *Spritebox::GetImage() const
+const sf::Texture *Spritebox::GetTexture() const
 {
-    return m_image;
+    return m_texture;
 }
 
 void Spritebox::SetSubRect(sf::IntRect subRect)
@@ -49,8 +49,8 @@ void Spritebox::Render(sf::RenderTarget& target, sf::Renderer& renderer) const
         return;
 
     //round for pixel perfect rendering
-    sf::Vector2f step(std::floor(static_cast<float>(m_image->GetWidth())/3.f + 0.5f),
-                      std::floor(static_cast<float>(m_image->GetWidth())/3.f + 0.5f));
+    sf::Vector2f step(std::floor(static_cast<float>(m_texture->GetWidth())/3.f + 0.5f),
+                      std::floor(static_cast<float>(m_texture->GetWidth())/3.f + 0.5f));
 
     sf::Vector2f coords[4];
     coords[0] = sf::Vector2f(0, 0);
@@ -58,7 +58,7 @@ void Spritebox::Render(sf::RenderTarget& target, sf::Renderer& renderer) const
     coords[2] = static_cast<sf::Vector2f>(m_dimension) - step;
     coords[3] = static_cast<sf::Vector2f>(m_dimension);
 
-    renderer.SetTexture(m_image);
+    renderer.SetTexture(m_texture);
 
     for(unsigned int x = 0; x < 3; ++x){
         renderer.Begin(sf::Renderer::TriangleStrip);

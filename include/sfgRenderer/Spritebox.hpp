@@ -4,12 +4,12 @@
 #include <sfgRenderer/Config.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/Graphics/Rect.hpp>
-#include <SFML/Graphics/Image.hpp>
+#include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Drawable.hpp>
 #include <SFML/System/Resource.hpp>
 
 namespace sf {
-	class Image;
+	class Texture;
 	class RenderTarget;
 }
 
@@ -22,9 +22,9 @@ class SFGRENDERER_API Spritebox : public sf::Drawable{
 	public:
 		Spritebox();
 
-		void SetImage(const sf::Image &image, bool adjustSubRect = true);
+		void SetTexture(const sf::Texture &texture, bool adjustSubRect = true);
 
-		const sf::Image *GetImage() const;
+		const sf::Texture *GetTexture() const;
 
 		void SetSubRect(sf::IntRect subRect);
 
@@ -40,7 +40,7 @@ class SFGRENDERER_API Spritebox : public sf::Drawable{
 		sf::IntRect   m_subRect;
 		sf::Vector2i  m_dimension;
 
-		sf::ResourcePtr<sf::Image> m_image;
+		sf::ResourcePtr<sf::Texture> m_texture;
 };
 
 }
